@@ -124,8 +124,8 @@ function addCursor(id, isSelf) {
   const img = document.createElement('img')
   const txt = document.createElement('p')
   
-  var id_letters = id.replace(/[^a-zA-Z]/g, '');
-  var id_numbers = id.replace(/[^0-9]/g, '');
+  var id_letters = id.slice(0, 7).replace(/[^a-zA-Z]/g, '');
+  var id_numbers = id.slice(0, 7).replace(/[^0-9]/g, '');
   
   var id_long_number = convertLetterToNumber(id_letters) + parseInt( id_numbers, 10 );
 
