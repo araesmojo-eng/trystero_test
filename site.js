@@ -138,7 +138,7 @@ function addCursor(id, isSelf) {
   var peer_image = peer_images[ id_long_number % 10 ];
   
   img.src = 'images/' + peer_image;
-  txt.innerText = isSelf ? 'you\n' + id + '\n' + id_letters +  '\n' + id_letter_part + '\n' + id_numbers +  '\n' + id_number_part + '\n' + String(id_long_number) : id.slice(0, 4)
+  txt.innerText = isSelf ? 'you\n' + id.slice(0, 4) : id.slice(0, 4)
   el.appendChild(img)
   el.appendChild(txt)
   canvas.appendChild(el)
