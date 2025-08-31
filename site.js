@@ -37,7 +37,7 @@ init(51)
 document.documentElement.className = 'ready'
 addCursor(selfId, true)
 
-addEventListener('mousemove', ({clientX, clientY}) => {
+addEventListener('pointermove', ({clientX, clientY}) => {
   mouseX = clientX / innerWidth
   mouseY = clientY / innerHeight
   moveCursor([mouseX, mouseY], selfId)
@@ -74,7 +74,7 @@ function init(n) {
   let getClick
 
   room = joinRoom(config, 'room' + n)
-  ;[sendMove, getMove] = room.makeAction('mouseMove')
+  ;[sendMove, getMove] = room.makeAction('pointerMove')
   ;[sendClick, getClick] = room.makeAction('click')
 
   byId('room-num').innerText = 'room #' + n
@@ -93,15 +93,32 @@ function moveCursor([x, y], id) {
   }
 }
 
+// from: https://stackoverflow.com/a/29040784/10981777
+function convertLetterToNumber(str) {
+  const start = 96 // "a".charCodeAt(0) - 1
+  const len = str.length;
+  const out = [...str.toLowerCase()].reduce((out, char, pos) => {
+      const val = char.charCodeAt(0) - start
+      const pow = Math.pow(26, len - pos - 1);
+      return out + val * pow
+  }, 0)
+  return out;
+}
+
 function addCursor(id, isSelf) {
   const el = document.createElement('div')
   const img = document.createElement('img')
   const txt = document.createElement('p')
+  
+  var id_letters = id.replace(/[^a-zA-Z]/g, '');
+  var id_numbers = id.replace(/[^0-9]/g, '');
+  
+  var id_long_number = convertLetterToNumber(id_letters) + parseInt( id_numbers, 10 );
 
   el.className = `cursor${isSelf ? ' self' : ''}`
   el.style.left = el.style.top = '-99px'
   img.src = 'images/flapping_bird_92.gif'
-  txt.innerText = isSelf ? 'you' : id.slice(0, 4)
+  txt.innerText = isSelf ? 'you ' + String(id_long_number) : id.slice(0, 4)
   el.appendChild(img)
   el.appendChild(txt)
   canvas.appendChild(el)
