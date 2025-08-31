@@ -100,7 +100,7 @@ function addCursor(id, isSelf) {
 
   el.className = `cursor${isSelf ? ' self' : ''}`
   el.style.left = el.style.top = '-99px'
-  img.src = 'images/hand.png'
+  img.src = 'images/flapping_bird_256.gif'
   txt.innerText = isSelf ? 'you' : id.slice(0, 4)
   el.appendChild(img)
   el.appendChild(txt)
