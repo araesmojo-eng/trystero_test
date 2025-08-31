@@ -25,6 +25,20 @@ const fruits = [
   '🥥',
   '🥝'
 ]
+
+const peer_images = [
+  'flapping_bird_92.gif',
+  'flapping_bird_2_92.gif',
+  'flapping_bird_3_92.gif',
+  'flapping_bird_4_92.gif',
+  'flapping_bird_5_92.gif',
+  'flapping_bird_6_92.gif',
+  'flapping_bird_7_92.gif',
+  'flapping_bird_8_92.gif',
+  'flapping_bird_9_92.gif',
+  'flapping_bird_10_92.gif'
+]
+
 const randomFruit = () => Math.floor(Math.random() * fruits.length)
 
 let mouseX = 0
@@ -117,7 +131,10 @@ function addCursor(id, isSelf) {
 
   el.className = `cursor${isSelf ? ' self' : ''}`
   el.style.left = el.style.top = '-99px'
-  img.src = 'images/flapping_bird_92.gif'
+  
+  var peer_image = peer_images[ id_long_number % 10 ];
+  
+  img.src = 'images/' + peer_image;
   txt.innerText = isSelf ? 'you\n' + id + '\n'+ String(id_long_number) : id.slice(0, 4)
   el.appendChild(img)
   el.appendChild(txt)
