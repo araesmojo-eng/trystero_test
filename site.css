@@ -165,8 +165,6 @@ pre {
 }
 
 .cursor img {
-  width: 92px;
-  height: 77px;
   image-rendering: pixelated;
 }
 
