@@ -33,7 +33,7 @@ let room
 let sendMove
 let sendClick
 
-init(49)
+init(51)
 document.documentElement.className = 'ready'
 addCursor(selfId, true)
 
