@@ -118,7 +118,7 @@ function addCursor(id, isSelf) {
   el.className = `cursor${isSelf ? ' self' : ''}`
   el.style.left = el.style.top = '-99px'
   img.src = 'images/flapping_bird_92.gif'
-  txt.innerText = isSelf ? 'you ' + String(id_long_number) : id.slice(0, 4)
+  txt.innerText = isSelf ? 'you\n' + id + '\n'+ String(id_long_number) : id.slice(0, 4)
   el.appendChild(img)
   el.appendChild(txt)
   canvas.appendChild(el)
