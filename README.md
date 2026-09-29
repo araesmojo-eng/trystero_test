@@ -7,3 +7,5 @@ Simple test app using birds that randomize based on users entering the room with
 Tests ability of multiple users to log onto a room instance and view the actions of other users.
 
 Can be tried at [Trystero Test Live](https://araesmojo-eng.github.io/trystero_test/)
+
+May eventually try setting up a wss (websocket) endpoint for personally routed connections.  Currently connects to the public Nostr networks.  Already had some issue with vaguely sketchy seeming Bitcoin sites showing up in the "trying to connect, dropped connection"
