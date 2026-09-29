@@ -1,4 +1,4 @@
-import {joinRoom, selfId} from 'trystero'
+import {joinRoom, selfId} from '@trystero-p2p/firebase'
 
 const byId = document.getElementById.bind(document)
 const canvas = byId('canvas')
