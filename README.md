@@ -9,3 +9,5 @@ Tests ability of multiple users to log onto a room instance and view the actions
 Can be tried at [Trystero Test Live](https://araesmojo-eng.github.io/trystero_test/)
 
 May eventually try setting up a wss (websocket) endpoint for personally routed connections.  Currently connects to the public Nostr networks.  Already had some issue with vaguely sketchy seeming Bitcoin sites showing up in the "trying to connect, dropped connection"
+
+Swapped over to a different default module routing service and it seems to have alleviated those issues.
